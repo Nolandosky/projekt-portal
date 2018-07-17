@@ -12,7 +12,7 @@ $password = $_POST['pass'];
 
   try{
   	$pdo = new PDO('mysql:host='.$db_host.';dbname='.$db_name.'',$db_user,$db_pass);
-  	echo 'Połączenie nawiązane!';
+
 
 
 
@@ -36,7 +36,10 @@ $password = $_POST['pass'];
 		if ($user && password_verify($password, $user['password'])) {
       $_SESSION['login'] = True;
 			$_SESSION['logged_id'] = $user['id'];
+      $_SESSION['rang'] = $user['rang'];
+      
 			unset($_SESSION['bad_attempt']);
+      header('Location: panel.php');
 		} else {
 			$_SESSION['bad_attempt'] = true;
 			header('Location: index.php');

@@ -1,7 +1,12 @@
 <?php
 require_once('libaries/checkAccess.php');
 isNotLoggin();
-echo "Jesteś zalogowany";
+
+if($_SESSION['rang'] == "Admin"){
+  header("Location: panel/admin.php");
+}
+if($_SESSION['rang'] == "User"){
+  header("Location: user/account.php");
+}
 
  ?>
-<a href="logout.php">Wyloguj</a>
