@@ -37,7 +37,11 @@ $password = $_POST['pass'];
       $_SESSION['login'] = True;
 			$_SESSION['logged_id'] = $user['id'];
       $_SESSION['rang'] = $user['rang'];
-      
+      $_SESSION['nick'] = $user['login'];
+      $_SESSION['imie'] = $user['imie'];
+      $_SESSION['nazwisko'] = $user['nazwisko'];
+      $_SESSION['email'] = $user['email'];
+      $_SESSION['data'] = $user['data'];
 			unset($_SESSION['bad_attempt']);
       header('Location: panel.php');
 		} else {

@@ -3,7 +3,7 @@ session_start();
 
 function isNotLoggin(){
   if(!isset($_SESSION['login'])){
-    header('Location: index.php');
+    header('Location: ../index.php');
   }
 }
 
